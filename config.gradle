@@ -1,0 +1,22 @@
+def releaseTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("GMT+08:00"))
+}
+
+ext {
+
+    curData = "${releaseTime()}"
+
+    android = [
+            applicationId    : "com.studyhelper.main",
+            buildToolsVersion: "28.0.3",
+            minSdkVersion    : 15,
+            targetSdkVersion : 25,
+            compileSdkVersion: 25,
+
+            versionName      : "${releaseTime()}",
+            supportVersion   : "25.2.0"
+    ]
+
+    versionCode = 1
+
+}
